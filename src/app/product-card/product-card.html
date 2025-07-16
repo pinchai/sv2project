@@ -1,0 +1,24 @@
+<div class="product-card shadow" style="width: 100%">
+<!--  {{ product | json }}-->
+  <span class="badge badge-danger product-discount">-30%</span>
+  <div class="img-box">
+  <!-- Replace src with your own image if needed -->
+  <img
+    [src]="product.image"
+    alt="Basketball Sandals"
+    class="product-image"
+    style="height: 200px; width: 100%; object-fit: contain;"
+  >
+  <div class="vertical-text product-title">
+    <h5>{{ product.title }}</h5>
+  </div>
+  <div class="vertical-text product-description">{{ product.description }}</div>
+</div>
+  <div class="card-body pb-2 pt-3">
+    <div>
+      <span class="price">{{ product.price | currency }}</span>
+    </div>
+    <div class="mt-1 text-dark" style="font-size:15px;">{{ product.category }}</div>
+    <i class="bi bi-heart wishlist-icon"></i>
+  </div>
+</div>
