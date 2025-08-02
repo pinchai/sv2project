@@ -1,10 +1,9 @@
-import {Component, Input,} from '@angular/core';
-import {CurrencyPipe, JsonPipe} from '@angular/common';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {CurrencyPipe} from '@angular/common';
 
 @Component({
   selector: 'app-product-card',
   imports: [
-    JsonPipe,
     CurrencyPipe
   ],
   templateUrl: './product-card.html',
@@ -12,4 +11,9 @@ import {CurrencyPipe, JsonPipe} from '@angular/common';
 })
 export class ProductCard {
   @Input() product: any = [];
+  @Output() addToCart: any = new EventEmitter<any>();
+
+  onAddToCart(product: any) {
+    return this.addToCart.emit(product);
+  }
 }

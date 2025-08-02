@@ -1,0 +1,98 @@
+<div class="container mt-5">
+  <h2 class="mb-4">Product Management (CRUD Demo UI)</h2>
+
+  <!-- Create (Add Product) Form -->
+  <div class="card mb-4">
+    <div class="card-header">Add Product</div>
+    <div class="card-body">
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="addName">Name</label>
+            <input type="text" class="form-control" id="addName" placeholder="Enter product name">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="addPrice">Price ($)</label>
+            <input type="number" class="form-control" id="addPrice" placeholder="0.00" min="0" step="0.01">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="addCategory">Category</label>
+            <input type="text" class="form-control" id="addCategory" placeholder="Category">
+          </div>
+          <div class="form-group col-md-2 align-self-end">
+            <button type="submit" class="btn btn-primary btn-block">Add</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Read (Product List) -->
+  <table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+    <tr>
+      <th width="60">#</th>
+      <th>Name</th>
+      <th>Price ($)</th>
+      <th>Category</th>
+      <th width="200">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Sample rows for demo -->
+    <tr>
+      <td>1</td>
+      <td>iPhone 15 Pro</td>
+      <td>999.00</td>
+      <td>Mobile</td>
+      <td>
+        <!-- Update and Delete buttons would open modals in real app -->
+        <button class="btn btn-sm btn-info" disabled>Edit</button>
+        <button class="btn btn-sm btn-danger" disabled>Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>HP Pavilion 14</td>
+      <td>780.00</td>
+      <td>Laptop</td>
+      <td>
+        <button class="btn btn-sm btn-info" disabled>Edit</button>
+        <button class="btn btn-sm btn-danger" disabled>Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Update Modal (UI only, doesn't open) -->
+  <div class="modal" tabindex="-1" role="dialog" style="display: none;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form>
+          <div class="modal-header">
+            <h5 class="modal-title">Edit Product</h5>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" class="form-control" value="iPhone 15 Pro">
+            </div>
+            <div class="form-group">
+              <label>Price ($)</label>
+              <input type="number" class="form-control" value="999.00">
+            </div>
+            <div class="form-group">
+              <label>Category</label>
+              <input type="text" class="form-control" value="Mobile">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="button" class="btn btn-secondary">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
