@@ -1,0 +1,43 @@
+<div class="container mt-2 mb-2">
+  @if (product != null) {
+    <div class="row">
+      <!-- Product Image -->
+      <div class="col-md-6">
+        <img
+          src="{{ product.imageUrl }}"
+          alt="{{ product.imageUrl }}"
+          class="product-image img-thumbnail"
+        >
+      </div>
+
+      <!-- Product Details -->
+      <div class="col-md-6">
+        <h2>{{ product.name }}</h2>
+        <p class="price">{{ product | currency }}</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac venenatis velit. Phasellus non dui
+          eros.</p>
+
+        <!-- Quantity Selection -->
+        <div class="form-group">
+          <label for="quantity">Quantity</label>
+          <input type="number" id="quantity" class="form-control qty-select" value="1" min="1">
+        </div>
+
+        <!-- Add to Cart -->
+        <button class="btn btn-primary btn-lg mt-3">Add to Cart</button>
+      </div>
+    </div>
+  }
+
+  @if (product== null) {
+    <div class="row">
+      <div class="col-md-12">
+        <h2 style="text-align: center; color: #cccc">Product not found</h2>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+  }
+</div>

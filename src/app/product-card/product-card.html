@@ -3,16 +3,23 @@
   <span class="badge badge-danger product-discount">Stock: {{ product.qty }}</span>
   <div class="img-box">
     <!-- Replace src with your own image if needed -->
-    <img
-      [src]="product.imageUrl"
-      alt="Basketball Sandals"
-      class="product-image"
-      onerror="this.src='/no_image.png';"
-      style="height: 200px; width: 100%; object-fit: contain;"
+    <div
+      style="cursor: pointer"
+      [routerLink]="['/product-detail']"
+      [queryParams]="{ product_id: product.id }"
     >
-    <div class="vertical-text product-title">
-      <h5>{{ product.name }}</h5>
+      <img
+        [src]="product.imageUrl"
+        alt="Basketball Sandals"
+        class="product-image"
+        onerror="this.src='/no_image.png';"
+        style="height: 200px; width: 100%; object-fit: contain;"
+      >
+      <div class="vertical-text product-title">
+        <h5>{{ product.name }}</h5>
+      </div>
     </div>
+
     <div class="vertical-text product-description">{{ product.description }}</div>
   </div>
   <div class="card-body pb-2 pt-3">

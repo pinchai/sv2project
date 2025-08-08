@@ -1,0 +1,12 @@
+.product-image {
+  max-width: 100%;
+  height: auto;
+}
+.price {
+  color: #e74c3c;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.size-select, .qty-select {
+  max-width: 150px;
+}
